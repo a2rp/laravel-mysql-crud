@@ -10,7 +10,7 @@
 [![IMAGE laravel mysql crud](https://youtu.be/QZP4qL_fsB4)/0.jpg)](https://youtu.be/QZP4qL_fsB4)
 //-->
 
-[<img src="https://i.ytimg.com/vi/QZP4qL_fsB4/maxresdefault.jpg" width="50%">](https://www.youtube.com/watch?v=QZP4qL_fsB4 "laravel mysql crud")
+[<img src="https://i.ytimg.com/vi/QZP4qL_fsB4/maxresdefault.jpg" width="100%">](https://www.youtube.com/watch?v=QZP4qL_fsB4 "laravel mysql crud")
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
