@@ -1,19 +1,20 @@
 @extends('products.layout')
-   
+
+@section('title', 'Edit Product')
+
 @section('content')
-    <div>
+    <section class="page-heading">
         <div>
-            <div>
-                <h2>Edit Product</h2>
-            </div>
-            <div>
-                <a href="{{ route('products.index') }}"> Back</a>
-            </div>
+            <p class="eyebrow">Product catalog</p>
+            <h1>Edit product</h1>
+            <p class="lead">Update this product record and keep its details current.</p>
         </div>
-    </div>
-   
+        <a class="button" href="{{ route('products.index') }}">Back to products</a>
+    </section>
+
     @if ($errors->any())
-        <div>
+        <div class="error-list" role="alert">
+            <strong>Please review the form:</strong>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -21,33 +22,18 @@
             </ul>
         </div>
     @endif
-  
-    <form action="{{ route('products.update',$product->id) }}" method="POST">
+
+    <form class="form-card" action="{{ route('products.update', $product->id) }}" method="POST">
         @csrf
         @method('PUT')
-   
-         <div>
-            <div>
-                <div>
-                    <strong>Name:</strong>
-                    <br />
-                    <input type="text" name="name" value="{{ $product->name }}" placeholder="Name" style="width: 300px;">
-                </div>
-            </div>
-            <br />
-            <div>
-                <div>
-                    <strong>Detail:</strong>
-                    <br />
-                    <textarea style="height:150px; width: 300px;" name="detail" placeholder="Detail">{{ $product->detail }}</textarea>
-                </div>
-            </div>
-            <br />
-            <div>
-              <button type="submit">Submit</button>
-            </div>
+        <div class="form-field">
+            <label for="name">Product name</label>
+            <input id="name" type="text" name="name" value="{{ old('name', $product->name) }}" placeholder="Enter product name" required>
         </div>
-   
+        <div class="form-field">
+            <label for="detail">Product details</label>
+            <textarea id="detail" name="detail" placeholder="Describe the product" required>{{ old('detail', $product->detail) }}</textarea>
+        </div>
+        <button class="button" type="submit">Update product</button>
     </form>
-
 @endsection

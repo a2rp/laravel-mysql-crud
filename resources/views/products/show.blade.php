@@ -1,34 +1,28 @@
 @extends('products.layout')
-  
-@section('content')
 
-    <div>
+@section('title', 'View Product')
+
+@section('content')
+    <section class="page-heading">
         <div>
-            <div>
-                <h2> Show Product</h2>
-            </div>
-            <div>
-                <a href="{{ route('products.index') }}"> Back</a>
-            </div>
+            <p class="eyebrow">Product catalog</p>
+            <h1>{{ $product->name }}</h1>
+            <p class="lead">Review the stored product information.</p>
         </div>
-    </div>
-    <br />
-   
-    <div>
-        <div>
-            <div>
-                <strong>Name:</strong>
-                <br />
-                {{ $product->name }}
-            </div>
+        <div class="actions">
+            <a class="button" href="{{ route('products.edit', $product->id) }}">Edit product</a>
+            <a class="button" href="{{ route('products.index') }}">Back to products</a>
         </div>
-        <br />
-        <div>
-            <div>
-                <strong>Details:</strong>
-                <br />
-                {{ $product->detail }}
-            </div>
+    </section>
+
+    <article class="detail-card">
+        <div class="detail-row">
+            <strong>Name</strong>
+            <p>{{ $product->name }}</p>
         </div>
-    </div>
+        <div class="detail-row">
+            <strong>Details</strong>
+            <p>{{ $product->detail }}</p>
+        </div>
+    </article>
 @endsection
