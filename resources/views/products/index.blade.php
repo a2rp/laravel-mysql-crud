@@ -36,7 +36,7 @@
                             <div class="actions">
                                 <a class="text-link" href="{{ route('products.show', $product->id) }}">View</a>
                                 <a class="text-link" href="{{ route('products.edit', $product->id) }}">Edit</a>
-                                <form action="{{ route('products.destroy', $product->id) }}" method="POST">
+                                <form action="{{ route('products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Delete this product? This action cannot be undone.');">
                                     @csrf
                                     @method('DELETE')
                                     <button class="button danger-button" type="submit">Delete</button>

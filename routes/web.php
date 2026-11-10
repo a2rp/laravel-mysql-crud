@@ -14,7 +14,6 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::redirect('/', '/products');
+
 Route::resource('products', ProductController::class);

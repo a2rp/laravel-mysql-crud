@@ -28,11 +28,11 @@
         @method('PUT')
         <div class="form-field">
             <label for="name">Product name</label>
-            <input id="name" type="text" name="name" value="{{ old('name', $product->name) }}" placeholder="Enter product name" required>
+            <input id="name" type="text" name="name" value="{{ old('name', $product->name) }}" placeholder="Enter product name" maxlength="255" required>
         </div>
         <div class="form-field">
             <label for="detail">Product details</label>
-            <textarea id="detail" name="detail" placeholder="Describe the product" required>{{ old('detail', $product->detail) }}</textarea>
+            <textarea id="detail" name="detail" placeholder="Describe the product" maxlength="10000" required>{{ old('detail', $product->detail) }}</textarea>
         </div>
         <button class="button" type="submit">Update product</button>
     </form>
